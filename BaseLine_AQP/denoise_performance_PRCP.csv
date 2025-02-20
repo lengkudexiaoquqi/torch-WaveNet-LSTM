@@ -1,0 +1,11 @@
+,filter1,BPNN_MAPE,LSTM_MAPE,RNN_MAPE,filter2,BPNN_SMAPE,LSTM_SMAPE,RNN_SMAPE
+0,10,inf,inf,inf,10,200.0,200.0,200.0
+0,20,inf,inf,inf,20,200.0,200.0,200.0
+0,30,inf,inf,inf,30,200.0,200.0,200.0
+0,40,inf,inf,inf,40,200.0,200.0,200.0
+0,50,inf,inf,inf,50,200.0,200.0,200.0
+0,60,inf,inf,inf,60,200.0,200.0,200.0
+0,70,inf,inf,inf,70,200.0,200.0,200.0
+0,80,inf,inf,inf,80,200.0,200.0,200.0
+0,90,inf,inf,inf,90,200.0,200.0,200.0
+0,100,inf,inf,inf,100,200.0,200.0,200.0

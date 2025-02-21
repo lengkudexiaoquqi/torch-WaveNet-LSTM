@@ -1,5 +1,5 @@
 BaseLine_AQP 单变量空气质量预测
-	子文件夹：BaseLine.py        pytorch构建的基准模型BPNN\RNN\LSTM网络结构
+	BaseLine.py        pytorch构建的基准模型BPNN\RNN\LSTM网络结构
 		 NoiseSelect.py     SSA降噪 三个模型的对比程序
 		window_select_bpnn.py 滑动窗口选择--BP模型
 		window_select_rnn.py 滑动窗口选择--RNN模型

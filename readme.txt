@@ -1,47 +1,46 @@
-BaseLine_AQP 单变量空气质量预测
-	BaseLine.py        pytorch构建的基准模型BPNN\RNN\LSTM网络结构
-		 NoiseSelect.py     SSA降噪 三个模型的对比程序
-		window_select_bpnn.py 滑动窗口选择--BP模型
-		window_select_rnn.py 滑动窗口选择--RNN模型
-		window_select_lstm.py 滑动窗口选择--LSTM模型
-		Single_bp.py   单变量单bp预测
+BaseLine_AQP Univariate Air Quality Prediction
+	Subfolder:  BaseLine.py pytorch constructed benchmark model BPNN\RNN\LSTM network structure
+                NoiseSelect.py SSA noise reduction Comparison program for three models
+                window_select_bpnn.py Sliding window selection - BP model
+                window_select_rnn.py Slide window to select - RNN model
+                window_select_lstm.py Sliding window select - LSTM model
+                Single_bp.py Univariate single bp prediction
 
-data 数据目录
-	combine_res.csv 是 原始数据，后面添加了风向数据
-	combine_filter\ssa_10*.csv    是降噪后的数据 其中降噪使用的是matlab里面的SSA代码，具体参见老师以前的代码，				ssa_10.csv是 100个分量，取10个分量的重构时间序列.
+
+data Data catalog
+	combine_res.csv is the original data, and the wind direction data is added later.
+	combine_filter\ssa_10*.csv is the data after noise reduction, which noise reduction using the SSA code in matlab, see the teacher's previous code, ssa_10.csv is a reconstructed time series of 100 components, taking 10 components.
 
 	
-Diebold-Mariano-Test-master  DM测试，注（文件夹中后缀为npy是预测值，后缀为pkl是保存的模型）
-	real_value 是保存真实值 
-	muti_factor_predict_value 是多元时序的预测值
-	WaveNet-LSTM是WaveNet-LSTM 的预测值和对应的pkl模型文件保存
+Diebold-Mariano-Test-master DM test, note (folder with npy suffix is predicted values, pkl suffix is saved model)
+	real_value saves the real value 
+	muti_factor_predict_value is the predicted value of the multivariate time series.
+	WaveNet-LSTM is the predicted value of WaveNet-LSTM and the corresponding pkl model file.
+	dm_test.py is the toolkit for dm test, just import it when you use it, see comments for specific parameters.
+	main.py is a dm test used to compute the model between multivariate and Wavenet.
 
-	dm_test.py 是 dm测试的工具包，使用时导入即可，具体参数详见注释
-	main.py  是用来计算多变量和Wavenet之间模型的一个dm测试
+MVT_AQP is an air quality prediction that incorporates meteorological data.
+	BaseLine_MVT is the model structure of multivariate BP\RNN\LSM.
+	GrangerTest.py is the code for Granger causality test.
+	Hyperopt_BPNN.py is used to parameterize the multivariate BP air quality prediction, mainly using the parameterization tool optuna.
+	Hyperopt_RNN.py is the code for multivariate RNN prediction of air quality.
+	Hyperopt_LSTM.py is used to predict air quality by multivariate LSTM.
+	test_BPNN.py is to bring in the parameters of the tuning parameter for bp prediction.
+	test_RNN.py is to bring in the parameters of the tuning parameter for rnn prediction.
+	test_LSTM.py is to bring in the parameters of the tuning parameter for LSTM prediction.
 
-MVT_AQP 是融合气象数据的空气质量预测
-	BaseLine_MVT 是 多元BP\RNN\LSM的模型结构
-	GrangerTest.py 是格兰杰因果检验的代码
-	Hyperopt_BPNN.py 是用来对多元BP预测空气质量调参的，主要使用的调参工具 optuna
-	Hyperopt_RNN.py 是针对多元RNN预测空气质量调参的
-	Hyperopt_LSTM.py 是针对多元LSTM预测空气质量调参的
-	test_BPNN.py 是 将调参的参数带入进行bp预测
-	test_RNN.py是 将调参的参数带入进行rnn预测
-	test_LSTM.py是 将调参的参数带入进行LSTM预测
+WaveNet_LSTM_AQP WaveNet-LSTM Air Quality Prediction
+	DE-WaveNet-LSTM.py is the code to parameterize WaveNet-LSTM with differential evolution algorithm.
+	Hyperopt-WaveNet-LSTM.py is the code to parameterize WaveNet-LSTM with optuna.
+	load_model_and_predict.py is the code to load the pkl file and then predict.
+	Single_WaveNet_LSTM.py is the code for single WaveNet_LSTM prediction.
+	WaveNet_LSTM.py is the code to build the network structure of WaveNet_LSTM using pytorch.
 
-WaveNet_LSTM_AQP  WaveNet-LSTM空气质量预测
-	DE-WaveNet-LSTM.py 是用 差分进化算法对WaveNet-LSTM调参的代码
-	Hyperopt-WaveNet-LSTM.py 是用optuna对WaveNet-LSTM进行调参的代码
-	load_model_and_predict.py 是加载pkl文件然后预测的代码
-	Single_WaveNet_LSTM.py 是单个的WaveNet_LSTM预测的代码
-	WaveNet_LSTM.py 是 使用pytorch构建WaveNet_LSTM的网络结构代码
+    get_data.py is mainly used to get the training set and test set after division.
 
-get_data.py 主要是用来得到划分后的训练集和测试集
+    logger_res.py is used to print out logs, such as the log of the parameterization process.
 
-logger_res.py 是用来打印输出日志，比如调参过程的日志
-
-seed_set.py 是 种子设置的代码
-
+    seed_set.py is the code for seed setting.
 
 
 
